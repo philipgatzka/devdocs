@@ -928,6 +928,66 @@ The API itself checks if the unit already exist. If it does, the old unit will b
 }
 ```
 
+### Specifying positions for configurator set options
+
+You may also specify a position for each configurator option, either when creating a product, or when updating an existing one like shown here:
+
+{% include 'api_badge.twig' with {'route': '/api/articles/SW10239?useNumberAsId=true', 'method': 'PUT', 'body': true} %}
+```json
+{
+    "configuratorSet": {
+        "groups": [
+            {
+                "name": "Size",
+                "options": [
+                    {
+                        "name": "S",
+                        "position": 4
+                    },
+                    {
+                        "name": "M",
+                        "position": 5
+                    },
+                    {
+                        "name": "L",
+                        "position": 1
+                    },
+                    {
+                        "name": "XL",
+                        "position": 2
+                    },
+                    {
+                        "name": "XXL",
+                        "position": 3
+                    }
+                ]
+            },
+            {
+                "name": "Color",
+                "options": [
+                    {
+                        "name": "White",
+                        "position": 1
+                    },
+                    {
+                        "name": "Yellow",
+                        "position": 2
+                    },
+                    {
+                        "name": "Blue",
+                        "position": 4
+                    },
+                    {
+                        "name": "Black",
+                        "position": 3
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
 ### Updating the SEO category of a product
 
 {% include 'api_badge.twig' with {'route': '/api/articles/SW10239?useNumberAsId=true', 'method': 'PUT', 'body': true} %}
